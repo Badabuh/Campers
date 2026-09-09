@@ -1,0 +1,51 @@
+.mainSwiper {
+  width: 100%;
+  height: 505px;
+  margin-bottom: 32px;
+}
+
+.mainImage {
+  display: block;
+  width: 100%;
+  height: 505px;
+  object-fit: cover;
+  border-radius: 16px;
+}
+
+.thumbsSwiper {
+  width: 100%;
+  height: 143px;
+}
+
+.thumbImage {
+  display: block;
+  width: 100%;
+  height: 143px;
+  object-fit: cover;
+  border-radius: 16px;
+  cursor: pointer;
+}
+
+.thumbsSwiper :global(.swiper-slide-thumb-active) .thumbImage {
+  border: 3px solid var(--color-grey-green);
+}
+
+@media (max-width: 767px) {
+  .mainSwiper {
+    height: auto;
+    margin-bottom: 16px;
+  }
+
+  .mainImage {
+    height: auto;
+  }
+
+  .thumbsSwiper {
+    height: 80px;
+  }
+
+  .thumbImage {
+    height: 80px;
+    border-radius: 10px;
+  }
+}

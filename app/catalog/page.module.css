@@ -1,0 +1,168 @@
+.catalogPage {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 32px;
+  margin-top: 48px;
+  margin-bottom: 120px;
+}
+.section {
+  flex: 1;
+}
+.listCards {
+  gap: 32px;
+  display: flex;
+  flex-direction: column;
+}
+.camperCard {
+  padding: 24px;
+  max-width: 888px;
+  display: flex;
+  background-color: var(--color-inputs);
+  border-radius: 16px;
+}
+.camperContent {
+  min-width: 0;
+  flex: 1;
+  margin-left: 24px;
+  display: flex;
+  gap: 24px;
+  flex-direction: column;
+}
+.camperImage {
+  border-radius: 16px;
+}
+.camperName {
+  font-family: var(--font-inter), sans-serif;
+  font-weight: 600;
+  font-size: 24px;
+
+  line-height: 1.33333;
+  color: var(--main);
+}
+.camperPrice {
+  font-family: var(--font-inter), sans-serif;
+  font-weight: 600;
+  font-size: 24px;
+
+  line-height: 1.33333;
+  color: var(--main);
+}
+.cardMeta {
+  display: flex;
+  font-family: var(--font-inter), sans-serif;
+
+  font-weight: 400;
+  font-size: 16px;
+
+  line-height: 1.5;
+  color: var(--main);
+  margin-top: 8px;
+  gap: 16px;
+}
+
+.cardMeta span,
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.tagIcon {
+  width: 20px;
+  height: 20px;
+  flex: 0 0 auto;
+}
+
+.mapPin {
+  width: 16px;
+  height: 16px;
+  flex: 0 0 auto;
+}
+.ratingIcon {
+  width: 15px;
+  height: 14px;
+  color: var(--color-rating);
+}
+
+.tagIcon {
+  fill: currentColor;
+}
+.location {
+  font-family: var(--font-inter), sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+
+  line-height: 1.5;
+  color: var(--main);
+}
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+}
+.camperDescription {
+  font-family: var(--font-inter), sans-serif;
+
+  font-weight: 400;
+  font-size: 16px;
+
+  line-height: 1.5;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  line-clamp: 1;
+  -webkit-line-clamp: 1;
+  color: var(--color-text);
+}
+.cardTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.tag {
+  font-family: var(--font-inter), sans-serif;
+
+  border-radius: 100px;
+  padding: 12px 18px;
+  background: var(--color-badges);
+  font-weight: 500;
+  font-size: 16px;
+
+  line-height: 1.5;
+  text-align: center;
+  color: var(--color-main);
+}
+.buttonLoadMore {
+  display: block;
+  border: 1px solid var(--color-gray-light);
+  border-radius: 200px;
+  padding: 16px 32px;
+  height: 56px;
+  font-weight: 500;
+  font-size: 16px;
+  background: var(--color-white);
+  line-height: 1.5;
+  letter-spacing: -0.01em;
+  color: var(--main);
+  margin: 0 auto;
+  margin-top: 40px;
+}
+.buttonLoadMore:hover {
+  border-color: var(--color-green-hover);
+}
+.showMoreButton {
+  max-width: fit-content;
+  border-radius: 200px;
+  padding: 16px 43.5px;
+  font-weight: 500;
+  font-size: 16px;
+  border: 0px;
+  background: var(--color-grey-green);
+  line-height: 1.5;
+  letter-spacing: -0.01em;
+  color: var(--color-white);
+}
+.showMoreButton:hover {
+  background: var(--color-green-hover);
+}
