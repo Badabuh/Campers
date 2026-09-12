@@ -1,26 +1,30 @@
-import nodemailer from 'nodemailer';
-
-const transporter = nodemailer.createTransport({
-  host: process.env.SMTP_HOST,
-  port: Number(process.env.SMTP_PORT) || 587,
-  secure: false,
-  connectionTimeout: 10000,
-  greetingTimeout: 10000,
-  socketTimeout: 10000,
-  auth: {
-    user: process.env.SMTP_USER,
-    pass: process.env.SMTP_PASSWORD,
-  },
-});
+import axios from 'axios';
 
 export const sendEmail = async (options) => {
-  const result = await transporter.sendMail(options);
+  const { data } = await axios.post(
+    'https://api.brevo.com/v3/smtp/email',
+    {
+      sender: { email: options.from },
+      to: [{ email: options.to }],
+      replyTo: { email: options.replyTo || options.from },
+      subject: options.subject,
+      htmlContent: options.html,
+    },
+    {
+      headers: {
+        accept: 'application/json',
+        'api-key': process.env.BREVO_API_KEY,
+        'content-type': 'application/json',
+      },
+      timeout: 10000,
+    },
+  );
 
-  console.log('Booking email accepted by SMTP:', {
-    messageId: result.messageId,
-    accepted: result.accepted,
-    rejected: result.rejected,
+  console.log('Booking email accepted by Brevo:', {
+    messageId: data.messageId,
+    accepted: [options.to],
+    rejected: [],
   });
 
-  return result;
+  return data;
 };
