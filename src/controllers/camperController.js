@@ -157,3 +157,4 @@ export const createBookingRequest = async (req, res, next) => {
     next(error);
   }
 };
+  description: camper.description,
