@@ -12,6 +12,9 @@
   "author": "Ivan Petrovskyi <ivan.prog74@gmail.com>",
   "license": "ISC",
   "type": "module",
+  "engines": {
+    "node": "22.x"
+  },
   "dependencies": {
     "celebrate": "^15.0.3",
     "cookie-parser": "^1.4.7",
