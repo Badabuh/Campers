@@ -1,0 +1,48 @@
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-white);
+  background-color: var(--color-grey-green);
+  border: none;
+  border-radius: 200px;
+  padding: 16px 0;
+  width: 173px;
+}
+.button:hover {
+  background-color: var(--color-green-hover);
+}
+.button:active {
+  background-color: var(--color-grey-green);
+}
+
+.mainText {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.main {
+  position: relative;
+  flex: 1;
+  min-height: calc(100vh - 64px);
+  display: flex;
+  align-items: center;
+}
+
+.heroImage {
+  z-index: 0;
+  left: 50% !important;
+  width: 100vw !important;
+  transform: translateX(-50%);
+  object-fit: cover;
+}
+
+.mainInner {
+  position: relative;
+  z-index: 1;
+
+  gap: 40px;
+  display: flex;
+  flex-direction: column;
+}

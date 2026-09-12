@@ -1,0 +1,25 @@
+.header {
+  background-color: var(--color-inputs);
+}
+
+.nav {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 24px 0;
+}
+
+.nav ul {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 32px;
+}
+.active {
+  color: var(--color-grey-green);
+}
+
+.active:hover {
+  color: var(--color-green-hover);
+}
