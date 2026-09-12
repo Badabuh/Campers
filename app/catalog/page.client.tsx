@@ -77,21 +77,27 @@ export default function CatalogPageClient() {
                   loading="eager"
                 />
                 <div className={styles.camperContent}>
-                  <div className={styles.cardHeader}>
-                    <h2 className={styles.camperName}>{camper.name}</h2>
-                    <p className={styles.camperPrice}>
-                      €{camper.price.toLocaleString("uk-UA")}
-                    </p>
-                  </div>
-                  <div className={styles.cardMeta}>
-                    <span>
-                      <Icon name="card-rating" className={styles.ratingIcon} />
-                      {camper.rating.toFixed(1)} ({camper.totalReviews} Reviews)
-                    </span>
-                    <span>
-                      <Icon name="map-pin" className={styles.mapPin} />{" "}
-                      {camper.location}
-                    </span>
+                  <div className={styles.cardTop}>
+                    <div className={styles.cardHeader}>
+                      <h2 className={styles.camperName}>{camper.name}</h2>
+                      <p className={styles.camperPrice}>
+                        €{camper.price.toLocaleString("uk-UA")}
+                      </p>
+                    </div>
+                    <div className={styles.cardMeta}>
+                      <span>
+                        <Icon
+                          name="card-rating"
+                          className={styles.ratingIcon}
+                        />
+                        {camper.rating.toFixed(1)} ({camper.totalReviews}{" "}
+                        Reviews)
+                      </span>
+                      <span>
+                        <Icon name="map-pin" className={styles.mapPin} />{" "}
+                        {camper.location}
+                      </span>
+                    </div>
                   </div>
                   <p className={styles.camperDescription}>
                     {camper.description}

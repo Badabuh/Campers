@@ -2,6 +2,7 @@ import CamperDetailsClient from "./page.client";
 import Gallery from "@/components/Gallery/Gallery";
 import styles from "./page.module.css";
 import { getCamperReviews, getCamperById } from "@/lib/api/clientApi";
+import { notFound } from "next/navigation";
 import { Icon } from "../page.client";
 interface NotesFilterPageProps {
   params: Promise<{
@@ -11,7 +12,14 @@ interface NotesFilterPageProps {
 
 export default async function CamperDetails(props: NotesFilterPageProps) {
   const { id } = await props.params;
-  const camper = await getCamperById(id);
+  let camper;
+
+  try {
+    camper = await getCamperById(id);
+  } catch {
+    notFound();
+  }
+
   const camperReviews = await getCamperReviews(id);
 
   return (

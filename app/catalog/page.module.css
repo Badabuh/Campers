@@ -29,6 +29,11 @@
   gap: 24px;
   flex-direction: column;
 }
+.cardTop {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
 .camperImage {
   border-radius: 16px;
 }
@@ -57,7 +62,6 @@
 
   line-height: 1.5;
   color: var(--main);
-  margin-top: 8px;
   gap: 16px;
 }
 

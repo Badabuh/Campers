@@ -21,7 +21,6 @@ export interface CampersResponse {
 
 export interface ReviewResponse {
   id: string;
-  camperId: string;
   reviewer_name: string;
   reviewer_rating: number;
   comment: string;

@@ -24,7 +24,6 @@ export interface Camper {
 
 export interface CamperGalleryItem {
   id: string;
-  camperId: string;
   thumb: string;
   original: string;
   order: number;

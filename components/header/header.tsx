@@ -11,7 +11,7 @@ export default function Header() {
     <header className={styles.header}>
       <div className="container">
         <nav className={styles.nav}>
-          <Link href="/">
+          <Link href="/" prefetch={false}>
             <svg width="136" height="16" aria-hidden="true" focusable="false">
               <use href="/svg/brand-sprite.svg#travel-trucks-logo" />
             </svg>
@@ -21,7 +21,9 @@ export default function Header() {
               id="home"
               className={`text-body-2 ${pathname === "/" ? styles.active : ""}`}
             >
-              <Link href="/">Home</Link>
+              <Link href="/" prefetch={false}>
+                Home
+              </Link>
             </li>
             <li
               id="catalog"
