@@ -140,22 +140,17 @@ export const createBookingRequest = async (req, res, next) => {
     const template = handlebars.compile(templateSource);
     const html = template({ name });
 
-    try {
-      await sendEmail({
-        from: process.env.SMTP_FROM,
-        to: email,
-        subject: 'Submit book',
-        html,
-      });
-    } catch {
-      throw createHttpError(
-        500,
-        'Failed to send the email, please try again later.',
-      );
-    }
-
     res.status(201).json({
       message: `Booking request for ${camper.name} accepted. We will contact you at ${email}.`,
+    });
+
+    sendEmail({
+      from: process.env.SMTP_FROM,
+      to: email,
+      subject: 'Submit book',
+      html,
+    }).catch((error) => {
+      console.error('Failed to send booking email:', error.message);
     });
   } catch (error) {
     next(error);
