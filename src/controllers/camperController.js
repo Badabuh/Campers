@@ -12,6 +12,7 @@ const toListItem = (camper) => ({
   rating: camper.rating,
   location: camper.location,
   form: camper.form,
+  description: camper.description,
   length: camper.length,
   width: camper.width,
   height: camper.height,
@@ -157,4 +158,3 @@ export const createBookingRequest = async (req, res, next) => {
     next(error);
   }
 };
-  description: camper.description,
