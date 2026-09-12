@@ -14,5 +14,13 @@ const transporter = nodemailer.createTransport({
 });
 
 export const sendEmail = async (options) => {
-  return await transporter.sendMail(options);
+  const result = await transporter.sendMail(options);
+
+  console.log('Booking email accepted by SMTP:', {
+    messageId: result.messageId,
+    accepted: result.accepted,
+    rejected: result.rejected,
+  });
+
+  return result;
 };

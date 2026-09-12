@@ -147,6 +147,7 @@ export const createBookingRequest = async (req, res, next) => {
     sendEmail({
       from: process.env.SMTP_FROM,
       to: email,
+      replyTo: process.env.SMTP_FROM,
       subject: 'Submit book',
       html,
     }).catch((error) => {
